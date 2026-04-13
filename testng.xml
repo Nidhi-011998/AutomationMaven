@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-       <!--<class name="com.zohocrm.testscripts.CreateAccount"/>
+       <class name="com.zohocrm.testscripts.CreateAccount"/>
       <class name="com.zohocrm.testscripts.CreateLead"/>
-      <class name="com.zohocrm.testscripts.CreatePotential"/>--> 
+      <class name="com.zohocrm.testscripts.CreatePotential"/> 
       <class name="com.zohocrm.testscripts.CreateCampaign"/>
       <class name="com.zohocrm.testscripts.CreateContact"/> 
     </classes>
