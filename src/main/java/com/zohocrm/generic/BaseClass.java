@@ -18,13 +18,13 @@ import com.zohocrm.pom.HomePage;
 import com.zohocrm.pom.LoginPage;
 
 public class BaseClass {
-	public static WebDriver driver;
-	WebDriver sdriver;
+	public  WebDriver driver;
+	
 	
 	@Parameters("browser")
 	@BeforeTest
 	public void OpenBrowser(String browser) {
-		driver = sdriver;
+		
 		 ChromeOptions options = new ChromeOptions();
 
 	    // Disable notifications & popups
