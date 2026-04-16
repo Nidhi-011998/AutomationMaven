@@ -7,7 +7,7 @@ pipeline{
 					}
 				}
 			
-			stage('Run Tests)	{			
+			stage('Run Tests')	{			
 			steps{
 				bat 'mvn test -DsuiteXmlFile=testng.xml'	
 			}
