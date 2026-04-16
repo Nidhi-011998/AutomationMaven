@@ -5,19 +5,26 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.zohocrm.pom.HomePage;
 import com.zohocrm.pom.LoginPage;
 
 public class BaseClass {
 	public static WebDriver driver;
+	WebDriver sdriver;
+	
+	@Parameters("browser")
 	@BeforeTest
-	public void OpenBrowser() {
+	public void OpenBrowser(String browser) {
+		driver = sdriver;
 		 ChromeOptions options = new ChromeOptions();
 
 	    // Disable notifications & popups
@@ -30,7 +37,20 @@ public class BaseClass {
 
 	    // Optional: disable password save UI
 	    options.addArguments("--disable-save-password-bubble");
-		driver= new ChromeDriver(options);
+	    
+	    
+	    if (browser.equalsIgnoreCase("chrome")) {
+			driver=new ChromeDriver(options);
+			
+		}
+		else if(browser.equalsIgnoreCase("firefox")) {
+			driver=new FirefoxDriver();
+		}
+		else if(browser.equalsIgnoreCase("edge")) {
+			driver=new EdgeDriver();
+		}
+	    
+		//driver= new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		Reporter.log("OpenBrowser", true);

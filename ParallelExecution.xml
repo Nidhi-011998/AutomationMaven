@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="2" name="TestGoogle">
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.zohocrm.testscripts.CreateAccount"/>
+      <class name="com.zohocrm.testscripts.CreateLead"/>
+    </classes>
+  </test> 
+  <test thread-count="2" name="TestEdge">
+  <parameter name="browser" value="firefox"/>
+   <classes>
+      <class name="com.zohocrm.testscripts.CreatePotential"/>
+      <class name="com.zohocrm.testscripts.CreateCampaign"/>
+      <class name="com.zohocrm.testscripts.CreateContact"/>
+    </classes> 
+  </test>
+</suite> 

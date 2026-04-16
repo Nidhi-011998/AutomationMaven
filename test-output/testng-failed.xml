@@ -2,16 +2,26 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.zohocrm.testscripts.CreateContact">
+      <class name="com.zohocrm.testscripts.CreateAccount">
         <methods>
           <include name="login"/>
           <include name="logOut"/>
-          <include name="testCreateContact"/>
+          <include name="testCreateAccount"/>
           <include name="closeBrowser"/>
           <include name="OpenBrowser"/>
         </methods>
-      </class> <!-- com.zohocrm.testscripts.CreateContact -->
+      </class> <!-- com.zohocrm.testscripts.CreateAccount -->
+      <class name="com.zohocrm.testscripts.CreateLead">
+        <methods>
+          <include name="testCreateLead"/>
+          <include name="login"/>
+          <include name="logOut"/>
+          <include name="closeBrowser"/>
+          <include name="OpenBrowser"/>
+        </methods>
+      </class> <!-- com.zohocrm.testscripts.CreateLead -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
